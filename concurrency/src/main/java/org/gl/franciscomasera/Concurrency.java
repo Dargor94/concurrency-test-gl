@@ -2,7 +2,6 @@ package org.gl.franciscomasera;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Executors;
@@ -13,31 +12,24 @@ public class Concurrency {
     public static void main(String[] args) {
 
         log.info("Beginning program");
-        int poolSize = 4;
-        var executor = Executors.newScheduledThreadPool(poolSize);
+        int poolSize = 10;
+        var executor = Executors.newFixedThreadPool(poolSize);
+        var completionService = new ExecutorCompletionService<MyTask>(executor);
 
-        var competitors = new ArrayList<MyTask>();
-
-        log.info("Loading task");
-        for (int i = 0; i < 100; i++) {
-            competitors.add(new MyTask(String.valueOf(i)));
+        log.info("Loading tasks");
+        for (int i = 1; i < poolSize + 1; i++) {
+            var task = new MyTask(String.valueOf(i));
+            completionService.submit(task);
         }
 
-
-        log.info("Running task");
-        var completionService = new ExecutorCompletionService<MyTask>(executor);
-        competitors.
-                parallelStream().
-                forEach(completionService::submit);
-
-        log.info("Preparing results...");
         try {
-            completionService.take();
-            var competitor = completionService.poll().get();
-            log.info("Winner is task n° {}", competitor.getTaskName());
+            log.info("Preparing results...");
+            var task = completionService.take().get();
+            log.info("Winner is task n° {}", task.getTaskName());
             executor.shutdownNow();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
     }
