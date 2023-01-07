@@ -12,10 +12,12 @@ import java.util.concurrent.Callable;
 public class MyTask implements Callable<MyTask> {
 
     private final String taskName;
+    private final int delay;
     private int progress = 0;
 
     @Override
-    public MyTask call() {
+    public MyTask call() throws InterruptedException {
+        Thread.sleep(delay);
         while (progress < 100) {
             progress += (Math.random() * 15) + 1;
         }

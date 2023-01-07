@@ -12,19 +12,20 @@ public class Concurrency {
     public static void main(String[] args) {
 
         log.info("Beginning program");
-        final int poolSize = 10;
+        final int poolSize = 1000;
         final var executor = Executors.newFixedThreadPool(poolSize);
         final var completionService = new ExecutorCompletionService<MyTask>(executor);
 
         log.info("Loading tasks");
         for (int i = 1; i < poolSize + 1; i++) {
-            final var task = new MyTask(String.valueOf(i));
+            final int delay = (int) ((Math.random() * (poolSize - 1) + 1));
+            final var task = new MyTask(String.valueOf(i), delay);
             completionService.submit(task);
         }
 
         try {
             log.info("Preparing results...");
-            var task = completionService.take().get();
+            final var task = completionService.take().get();
             log.info("Winner is task n° {}", task.getTaskName());
             executor.shutdownNow();
         } catch (InterruptedException | ExecutionException e) {
