@@ -12,13 +12,13 @@ public class Concurrency {
     public static void main(String[] args) {
 
         log.info("Beginning program");
-        int poolSize = 10;
-        var executor = Executors.newFixedThreadPool(poolSize);
-        var completionService = new ExecutorCompletionService<MyTask>(executor);
+        final int poolSize = 10;
+        final var executor = Executors.newFixedThreadPool(poolSize);
+        final var completionService = new ExecutorCompletionService<MyTask>(executor);
 
         log.info("Loading tasks");
         for (int i = 1; i < poolSize + 1; i++) {
-            var task = new MyTask(String.valueOf(i));
+            final var task = new MyTask(String.valueOf(i));
             completionService.submit(task);
         }
 
