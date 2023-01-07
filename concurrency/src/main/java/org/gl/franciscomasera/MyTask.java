@@ -13,7 +13,7 @@ public class MyTask implements Callable<MyTask> {
 
     private final String taskName;
     private final int delay;
-    private int progress = 0;
+    private int progress;
 
     @Override
     public MyTask call() throws InterruptedException {
