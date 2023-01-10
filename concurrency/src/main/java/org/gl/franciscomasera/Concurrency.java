@@ -19,14 +19,14 @@ public class Concurrency {
         log.info("Loading tasks");
         for (int i = 1; i < poolSize + 1; i++) {
             final int delay = (int) ((Math.random() * (poolSize - 1) + 1));
-            final var task = new MyTask(String.valueOf(i), delay);
+            final var task = new MyTask(i, delay);
             completionService.submit(task);
         }
 
         try {
             log.info("Preparing results...");
             final var task = completionService.take().get();
-            log.info("Winner is task n° {}", task.getTaskName());
+            log.info("Winner is task n° {}", task.getTaskNumber());
             executor.shutdownNow();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();

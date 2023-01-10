@@ -11,7 +11,7 @@ import java.util.concurrent.Callable;
 @RequiredArgsConstructor
 public class MyTask implements Callable<MyTask> {
 
-    private final String taskName;
+    private final int taskNumber;
     private final int delay;
     private int progress;
 
