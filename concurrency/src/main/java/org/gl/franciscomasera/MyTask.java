@@ -1,5 +1,6 @@
 package org.gl.franciscomasera;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +13,9 @@ import java.util.concurrent.Callable;
 public class MyTask implements Callable<MyTask> {
 
     private final int taskNumber;
+    @Getter(AccessLevel.NONE)
     private final int delay;
+    @Getter(AccessLevel.NONE)
     private int progress;
 
     @Override
