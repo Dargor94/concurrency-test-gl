@@ -1,4 +1,4 @@
-package org.gl.franciscomasera;
+package org.gl.franciscomasera.concurrency.domain;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,4 +26,6 @@ public class MyTask implements Callable<MyTask> {
         }
         return this;
     }
+
+
 }
