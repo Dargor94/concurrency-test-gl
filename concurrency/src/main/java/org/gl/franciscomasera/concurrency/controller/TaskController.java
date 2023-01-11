@@ -1,6 +1,5 @@
 package org.gl.franciscomasera.concurrency.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import org.gl.franciscomasera.concurrency.domain.MyTask;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +11,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.Executors;
 
-@Slf4j
 @RestController
 @RequestMapping("/task")
 public class TaskController {
@@ -20,11 +18,11 @@ public class TaskController {
     @PostMapping("/race/{poolSize}")
     public ResponseEntity<String> taskRace(@PathVariable int poolSize) {
 
-        log.info("Beginning program");
+        System.out.println("Beginning program");
         final var executor = Executors.newFixedThreadPool(poolSize);
         final var completionService = new ExecutorCompletionService<MyTask>(executor);
 
-        log.info("Loading tasks");
+        System.out.println("Loading tasks");
         for (int i = 1; i < poolSize + 1; i++) {
             final int delay = (int) ((Math.random() * (poolSize - 1) + 1));
             final var task = new MyTask(i, delay);
@@ -33,9 +31,9 @@ public class TaskController {
 
         MyTask task;
         try {
-            log.info("Preparing results...");
+            System.out.println("Preparing results...");
             task = completionService.take().get();
-            log.info("Winner is task n° {}", task.getTaskNumber());
+            System.out.printf("Winner is task n° %d", task.getTaskNumber());
             executor.shutdownNow();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
