@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @RestController
@@ -19,13 +20,13 @@ public class TaskController {
     public ResponseEntity<String> taskRace(@PathVariable int poolSize) {
 
         System.out.println("Beginning program");
-        final var executor = Executors.newFixedThreadPool(poolSize);
-        final var completionService = new ExecutorCompletionService<MyTask>(executor);
+        final ExecutorService executor = Executors.newFixedThreadPool(poolSize);
+        final ExecutorCompletionService<MyTask> completionService = new ExecutorCompletionService<>(executor);
 
         System.out.println("Loading tasks");
         for (int i = 1; i < poolSize + 1; i++) {
             final int delay = (int) ((Math.random() * (poolSize - 1) + 1));
-            final var task = new MyTask(i, delay);
+            final MyTask task = new MyTask(i, delay);
             completionService.submit(task);
         }
 
@@ -40,7 +41,7 @@ public class TaskController {
             throw new RuntimeException(e);
         }
 
-        var msg = String.format("Winner is task n° %s", task.getTaskNumber());
+        String msg = String.format("Winner is task n° %s", task.getTaskNumber());
         return ResponseEntity.ok(msg);
     }
 
