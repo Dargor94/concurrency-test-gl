@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/task")
 public class TaskController {
 
-    @PostMapping("/race")
+    @PostMapping
     public ResponseEntity<String> taskRace() throws InterruptedException {
 
         var myTask = new MyTask();
