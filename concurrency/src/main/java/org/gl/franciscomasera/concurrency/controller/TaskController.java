@@ -1,5 +1,6 @@
 package org.gl.franciscomasera.concurrency.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.gl.franciscomasera.concurrency.domain.MyTask;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/task")
+@Slf4j
 public class TaskController {
 
     @PostMapping
@@ -17,7 +19,7 @@ public class TaskController {
 
         var firstTask = new Thread(myTask);
         var secondTask = new Thread(myTask);
-
+        log.info("Init");
         firstTask.start();
         secondTask.start();
         firstTask.join();
