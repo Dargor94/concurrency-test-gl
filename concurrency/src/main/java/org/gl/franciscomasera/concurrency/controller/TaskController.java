@@ -19,7 +19,9 @@ public class TaskController {
 
         var firstTask = new Thread(myTask);
         var secondTask = new Thread(myTask);
+
         log.info("Init");
+
         firstTask.start();
         secondTask.start();
         firstTask.join();
