@@ -9,7 +9,7 @@ import static java.lang.Thread.sleep;
 
 @Slf4j
 @AllArgsConstructor
-public class TaskA implements Runnable {
+public class TaskB implements Runnable {
 
     private final ReentrantLock lock1;
     private final ReentrantLock lock2;
@@ -18,15 +18,15 @@ public class TaskA implements Runnable {
     public void run() {
         try {
 
-            lock1.lock();
-            sleep(1000);
-            log.info("Thread ".concat(Thread.currentThread().getName()).concat(" acquired first lock"));
-
             lock2.lock();
-            log.info("Thread ".concat(Thread.currentThread().getName()).concat(" acquired second lock"));
+            sleep(1000);
+            log.info("Thread ".concat(Thread.currentThread().getName()).concat("acquired second lock"));
 
-            lock2.unlock();
+            lock1.lock();
+            log.info("Thread ".concat(Thread.currentThread().getName()).concat("acquired first lock"));
+
             lock1.unlock();
+            lock2.unlock();
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
