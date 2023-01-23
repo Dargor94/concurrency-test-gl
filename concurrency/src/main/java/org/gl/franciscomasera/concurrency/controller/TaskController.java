@@ -1,31 +1,29 @@
 package org.gl.franciscomasera.concurrency.controller;
 
-import lombok.extern.slf4j.Slf4j;
-import org.gl.franciscomasera.concurrency.domain.MyTask;
+import org.gl.franciscomasera.concurrency.domain.TaskA;
+import org.gl.franciscomasera.concurrency.domain.TaskB;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.Executor;
+
 @RestController
 @RequestMapping("/task")
-@Slf4j
 public class TaskController {
 
+    @Qualifier("executorA")
+    private Executor myExecutor;
+
     @PostMapping
-    public ResponseEntity<String> taskRace() throws InterruptedException {
+    public ResponseEntity<String> taskRace() {
+        var taskA = new TaskA();
+        var taskB = new TaskB();
 
-        var myTask = new MyTask();
-
-        var firstTask = new Thread(myTask);
-        var secondTask = new Thread(myTask);
-
-        log.info("Init");
-
-        firstTask.start();
-        secondTask.start();
-        firstTask.join();
-        secondTask.join();
+        myExecutor.execute(taskA);
+        myExecutor.execute(taskB);
 
         return ResponseEntity.ok("Ok");
     }
