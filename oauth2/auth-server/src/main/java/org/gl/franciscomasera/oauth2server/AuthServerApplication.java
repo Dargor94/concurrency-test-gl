@@ -1,4 +1,4 @@
-package org.gl.franciscomasera.authserver;
+package org.gl.franciscomasera.oauth2server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

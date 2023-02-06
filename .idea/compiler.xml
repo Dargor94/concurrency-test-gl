@@ -7,20 +7,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="resource-server" />
-        <module name="client" />
+        <module name="oauth2-client" />
+        <module name="oauth2-server" />
+        <module name="oauth2-resource-server" />
         <module name="concurrency" />
-        <module name="auth-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-server (1) (org.gl.franciscomasera)" target="17" />
+      <module name="auth-server (2)" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="auth-server" options="-parameters" />
-      <module name="client" options="-parameters" />
+      <module name="auth-server (1) (org.gl.franciscomasera)" options="-parameters" />
       <module name="concurrency" options="-parameters" />
       <module name="oauth2" options="" />
-      <module name="resource-server" options="-parameters" />
+      <module name="oauth2-client" options="-parameters" />
+      <module name="oauth2-resource-server" options="-parameters" />
+      <module name="oauth2-server" options="-parameters" />
     </option>
   </component>
 </project>

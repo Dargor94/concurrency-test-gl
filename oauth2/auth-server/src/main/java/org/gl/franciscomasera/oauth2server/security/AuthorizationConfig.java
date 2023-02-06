@@ -1,4 +1,4 @@
-package org.gl.franciscomasera.authserver.security;
+package org.gl.franciscomasera.oauth2server.security;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

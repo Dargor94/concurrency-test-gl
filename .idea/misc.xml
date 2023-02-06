@@ -5,15 +5,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/../../../my-gl-challenges/concurrency/pom.xml" />
-        <option value="$PROJECT_DIR$/concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2/pom.xml" />
-        <option value="$PROJECT_DIR$/oauth2/client/pom.xml" />
-        <option value="$PROJECT_DIR$/oauth2/auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2/resource-server/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2/auth-server/pom.xml" />
+        <option value="$PROJECT_DIR$/concurrency/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="PWA">
+    <option name="enabled" value="true" />
+    <option name="wasEnabledAtLeastOnce" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">

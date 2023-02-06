@@ -8,8 +8,7 @@
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.gl.franciscomasera.oauth2</groupId>
-    <artifactId>resource-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>oauth2-resource-server</artifactId>
     <name>resource-server</name>
     <description>resource-server</description>
     <dependencies>

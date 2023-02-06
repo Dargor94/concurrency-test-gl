@@ -1,4 +1,4 @@
-package org.gl.franciscomasera.authserver.security;
+package org.gl.franciscomasera.oauth2server.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

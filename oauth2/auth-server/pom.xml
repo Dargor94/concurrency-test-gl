@@ -7,8 +7,8 @@
         <artifactId>oauth2</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>auth-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>org.gl.franciscomasera.oauth2</groupId>
+    <artifactId>oauth2-server</artifactId>
     <name>auth-server</name>
     <description>auth-server</description>
     <dependencies>
