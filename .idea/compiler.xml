@@ -14,15 +14,16 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="auth-server (1) (org.gl.franciscomasera)" target="17" />
-      <module name="auth-server (2)" target="1.5" />
+      <module name="concurrency" target="11" />
+      <module name="oauth2" target="17" />
+      <module name="oauth2-client" target="17" />
+      <module name="oauth2-resource-server" target="17" />
+      <module name="oauth2-server" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="auth-server (1) (org.gl.franciscomasera)" options="-parameters" />
       <module name="concurrency" options="-parameters" />
-      <module name="oauth2" options="" />
       <module name="oauth2-client" options="-parameters" />
       <module name="oauth2-resource-server" options="-parameters" />
       <module name="oauth2-server" options="-parameters" />

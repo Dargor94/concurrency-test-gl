@@ -10,7 +10,7 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity
+       httpSecurity
                 .authorizeHttpRequests(matcher -> matcher
                         .requestMatchers("/resource/**")
                         .authenticated())

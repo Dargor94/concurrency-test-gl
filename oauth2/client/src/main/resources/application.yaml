@@ -13,12 +13,13 @@ spring:
     oauth2:
       client:
         registration:
-          product-client-cred:
+          products-client-oidc:
             provider: spring
             client-id: product-client
-            client-secret: secret
+            client-secret: product-secret
             authorization-grant-type: client_credentials
-            client-name: product-client-cred
+            redirect-uri: "http://127.0.0.1:9000/login/oauth2/code/{registrationId}"
+            client-name: products-client-oidc
         provider:
           spring:
-            issuer-uri: http://localhost:9000
+            issuer-uri: http://127.0.0.1:9000
