@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa6342c5-6783-47e3-96c1-ea13a7f4ccf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/concurrency_0_0_1_SNAPSHOT.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/maven_wrapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gaston-cangemi.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/oauth2/auth-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/auth-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/auth-server/src/main/java/org/gl/franciscomasera/oauth2server/security/AuthorizationConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/oauth2/auth-server/src/main/java/org/gl/franciscomasera/oauth2server/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/auth-server/src/main/java/org/gl/franciscomasera/oauth2server/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oauth2/auth-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/auth-server/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/client/src/main/java/org/gl/franciscomasera/oauth2/client/config/WebClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/client/src/main/java/org/gl/franciscomasera/oauth2/client/config/WebClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/client/src/main/java/org/gl/franciscomasera/oauth2/client/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/client/src/main/java/org/gl/franciscomasera/oauth2/client/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/client/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/client/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/resource-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/resource-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth2/resource-server/src/main/java/org/gl/franciscomasera/oauth2/resourceserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/resource-server/src/main/java/org/gl/franciscomasera/oauth2/resourceserver/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oauth2/resource-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2/resource-server/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,9 +54,11 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "c736dc0da986e2ad9ca3dcd7614ec166",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -134,6 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676144909908</updated>
       <workItem from="1676144932285" duration="8044000" />
+      <workItem from="1676324239560" duration="1029000" />
     </task>
     <servers />
   </component>
