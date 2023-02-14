@@ -3,7 +3,6 @@ server:
 
 logging:
   level:
-    root: INFO
-    org.springframework.web: DEBUG
-    org.springframework.security: ERROR
-    org.springframework.security.oauth2: INFO
+    root: info
+    org.springframework.web: info
+    org.springframework.security: trace
