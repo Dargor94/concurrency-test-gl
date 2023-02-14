@@ -24,10 +24,10 @@ public class ProductController {
 
     @GetMapping("list")
     public List<Product> getProducts(
-            @RegisteredOAuth2AuthorizedClient("articles-client-authorization-code")OAuth2AuthorizedClient authorizedClient) {
+            @RegisteredOAuth2AuthorizedClient("products-reg-id")OAuth2AuthorizedClient authorizedClient) {
         return webClient
                 .get()
-                .uri("http://127.0.0.1:8090/resource/product")
+                .uri("http://localhost:8090/resource/product")
                 .attributes(oauth2AuthorizedClient(authorizedClient))
                 .retrieve()
                 .bodyToMono(

@@ -14,11 +14,10 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests(authorizeRequests ->
-                        authorizeRequests.anyRequest().authenticated()
-                )
+                .authorizeHttpRequests().anyRequest().authenticated()
+                .and()
                 .oauth2Login(oauth2Login ->
-                        oauth2Login.loginPage("/oauth2/authorization/products-client-oidc"))
+                        oauth2Login.loginPage("http://localhost:9000/oauth2/authorization/products-reg-id"))
                 .oauth2Client(withDefaults());
         return http.build();
     }

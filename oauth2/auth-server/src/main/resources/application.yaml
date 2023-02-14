@@ -6,3 +6,9 @@ logging:
     root: info
     org.springframework.web: info
     org.springframework.security: trace
+
+spring:
+  security:
+    user:
+      password: 12345
+      name: admin
